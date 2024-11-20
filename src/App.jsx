@@ -1,23 +1,23 @@
 import './App.css';
 import Header from './components/Header';
-// import User from './components/User';
-// import Movieslist from './components/Movieslist/movies.json';
+import Movies from './components/Movies';
+import Movieslist from './components/Movieslist/movies.json';
 
 const App = () => {
   return (
     <div>
       <Header />
-      {/* <div className="containerUsers">
-        <h1>Users</h1>
-        <div className="wrapperCards">
+      <div className="containerMovies">
+        <h1>Movies</h1>
+        <div className="wrapperMovies">
           {
-            Movieslist.map((user, index) => (
-              <User key={index} id={user.id} firstName={user.firstName} lastName={user.lastName} phone={user.phone} email={user.email} addressReg={user.address.region} addressZip={user.address.zip} image={user.image} cars={user.cars}
+            Movieslist.map((movie, index) => (
+              <Movies key={index} id={movie.id} Title={movie.Title} Year={movie.Year} Rated={movie.Rated} Released={movie.Released} Runtime={movie.Runtime} Genre={movie.Genre} Director={movie.Director} Writer={movie.Writer} Actors={movie.Actors}Plot={movie.Plot}Language={movie.Language}Country={movie.Country}Awards={movie.Awards}Metascore={movie.Metascore}imdbRating={movie.imdbRating}imdbVotes={movie.imdbVotes}imdbID={movie.imdbID}Type={movie.Type}Response={movie.Response}Images={movie.Images[0]}
               />
             ))
           }
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
