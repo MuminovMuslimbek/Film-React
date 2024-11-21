@@ -1,27 +1,33 @@
 import './index.css';
+import heart from "../../assets/heart.svg";
+import heartSolid from "../../assets/heart-solid.svg";
 
 const User = (props) => {
-    const { id, Title, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Metascore, imdbRating, imdbVotes, imdbID, Type, Response, Images } = props;
+    const { id, Title, Plot, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Language, Country, Awards, imdbRating, Images } = props;
 
     return (
         <div className="cardMovie">
-            <img src={props.Images} />
+            <img src={Images} alt="Movie Poster" />
             <div className="titleMovies">
-                <h3>{props.Title}</h3>
-                <p>{props.Plot}</p>
+                <h3>{Title}</h3>
+                <p>{Plot}</p>
+                <div className='like'>
+                    <img src={heart} />
+                </div>
                 <ul className="commentMovies">
-                    <li><strong>Yil:</strong>{props.Year}</li>
-                    <li><strong>Reyting:</strong>{props.Rated}</li>
-                    <li><strong>Chiqarilgan sana:</strong>{props.Released}</li>
-                    <li><strong>Davomiyligi:</strong>{props.Runtime}</li>
-                    <li><strong>Janr:</strong>{props.Genre}</li>
-                    <li><strong>Rejissor:</strong>{props.Director}</li>
-                    <li><strong>Yozuvchi:</strong>{props.Writer}</li>
-                    <li><strong>Aktyorlar:</strong>{props.Actors}</li>
-                    <li><strong>Til:</strong>{props.Language}</li>
-                    <li><strong>Mamlakat:</strong>{props.Country}</li>
-                    <li><strong>Mukofotlar:</strong>{props.Awards}</li>
-                    <li><strong>IMDb reytingi:</strong>{props.imdbRating}</li>
+                    <span className='spanId'>{id}</span>
+                    <li><strong>Yil:</strong> {Year}</li>
+                    <li><strong>Reyting:</strong> {Rated}</li>
+                    <li><strong>Chiqarilgan sana:</strong> {Released}</li>
+                    <li><strong>Davomiyligi:</strong> {Runtime}</li>
+                    <li><strong>Janr:</strong> {Genre}</li>
+                    <li><strong>Rejissor:</strong> {Director}</li>
+                    <li><strong>Yozuvchi:</strong> {Writer}</li>
+                    <li><strong>Aktyorlar:</strong> {Actors}</li>
+                    <li><strong>Til:</strong> {Language}</li>
+                    <li><strong>Mamlakat:</strong> {Country}</li>
+                    <li><strong>Mukofotlar:</strong> {Awards}</li>
+                    <li><strong>IMDb reytingi:</strong> {imdbRating}</li>
                 </ul>
             </div>
         </div>
